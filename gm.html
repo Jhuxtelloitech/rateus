@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rate Us</title>
-
+<link rel="icon" href="sales.jpg">
     <link rel="stylesheet" href="style.css">
 	<style>
 	/*-------------------- CSS --------------------*/
@@ -21,8 +21,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(#008fb0, #00cfa2);
+    background: linear-gradient(#008fb0, #00cfa2); /* fallback gradient */
+    background-image: url('e.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Keeps the background fixed while scrolling */
 }
+
 
 .container {
     width: 70%;
@@ -264,7 +270,9 @@ We would greatly appreciate it if you could take a moment to share your experien
         popup.innerHTML = `
             <div class="popup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); z-index: 9999;">
                <img src="sales.jpg" alt="Your Business Logo" style="max-width: 50%; margin: 0 auto; display: block;">
-		<h2>Rate Us</h2>
+
+               
+				<h2>Rate Us</h2>
                 <p>Dear Valued Customer, your feedback is important to us. Please take a moment to share your experience with Jhuxtello iTech.</p>
                 <!-- Your rating form or any other content can be added here -->
                 <button id="close-popup" class="close-btn">Close</button>
