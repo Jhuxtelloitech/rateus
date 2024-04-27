@@ -1,0 +1,326 @@
+<!-- -------------------- HTML -------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Us</title>
+<link rel="icon" href="sales.jpg">
+    <link rel="stylesheet" href="style.css">
+	<style>
+	/*-------------------- CSS --------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#008fb0, #00cfa2); /* fallback gradient */
+    background-image: url('e.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Keeps the background fixed while scrolling */
+}
+
+
+.container {
+    width: 70%;
+    min-height: 670px;
+    max-width: 800px;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #00000008;
+
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    background: #ebebeb49;
+
+}
+
+.container h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+
+.form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    position: relative;
+    width: 50%;
+    min-width: 350px;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 15px 0;
+    color: #425981;
+    font-weight: 500;
+    font-size: 1.1rem;
+    box-shadow: inset 4px 4px 4px #a5a3a350,
+    4px 4px 4px #dadada21;
+}
+
+label {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: gray;
+    transition: 0.4s;
+}
+
+.input:focus + label,
+.input:valid + label {
+    transform: scale(0.9);
+    top: -8px;
+    background: white;
+    padding: 2px 5px;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+textarea::placeholder {
+    color: gray;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 25px;
+}
+
+.btns {
+    display: flex;
+    gap: 20px;
+}
+
+.yes-no {
+    display: flex;
+    gap: 20px;
+}
+
+
+.form-btn {
+    width: 120px;
+    height: 50px;
+    background: #fcfcfd;
+    border-radius: 4px;
+    color: black;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.form-btn:hover {
+box-shadow: 0 4px 4px #14003f4d,
+inset 0 -3px 0 #e4e4e4
+}
+
+.form-btn:active {
+    box-shadow:  0 3px 7px inset #d6d6d6;
+    transform: translateY(-2px);
+}
+
+.bg-1,
+.bg-2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: -1;
+    pointer-events: none;
+
+}
+.bg-1 {
+    background: #ff0;
+    animation: anime1 10s linear infinite alternate-reverse;
+}
+.bg-2 {
+    background: #ff1ae0;
+    animation: anime2 10s linear infinite alternate-reverse;
+}
+
+@keyframes anime1 {
+    0%, 100% {
+        top: 25%;
+        left: 25%;
+    }
+    25% {
+        top: 78%;
+        left: 35%;
+    }
+    55% {
+        top: 76%;
+        left: 14%;
+    }
+    75% {
+        top: 38%;
+        left: 76%;
+    }
+}
+@keyframes anime2 {
+    0%, 100% {
+        top: 76%;
+        left: 14%;
+    }
+    25% {
+        top: 38%;
+        left: 76%;
+    }
+    55% {
+        top: 76%;
+        left: 26%;
+    }
+    75% {
+        top: 25%;
+        left: 28%;
+    }
+}
+
+.yes-no .form-btn.active {
+    background-color: #2ecc71; /* Green color for "Yes" */
+}
+
+.yes-no .form-btn.active:hover {
+    background-color: #27ae60; /* Darker green color on hover */
+}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Share your experience with Jhuxtello iTech</h1>
+
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="form">
+            <input type="hidden" name="access_key" value="b9b13cd5-9bf4-4954-bdd1-f62ad408f0f5">
+
+
+            <div class="wrapper">
+                <input type="text" name="Name" id="text" class="input" required>
+                <label for="text">Your Name</label>
+            </div>
+            
+            <div class="wrapper">
+               <textarea placeholder="At Jhuxtello iTech, we strive to provide top-notch services tailored to your needs.
+We would greatly appreciate it if you could take a moment to share your experience with us. " name="Message" id="message" rows="6" class="input"></textarea>
+            </div>
+			
+   <br>
+   <h2 style="color:white">Was your issue Solved?</h2>
+  <div class="yes-no">
+    <button type="button" class="form-btn" id="yesBtn" onclick="setIssueSolved('Yes')">Yes</button>
+    <button type="button" class="form-btn" id="noBtn" onclick="setIssueSolved('No')">No</button>
+ </div>
+            <br>
+            <div id="rating" class="rating">
+                  <h2 style="color:white">Rate Us(1-5)</h2>
+                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">&#9733;</label>
+				<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">&#9733;</label>
+              <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars">&#9733;</label>
+                 
+			</div>
+       
+<br>
+            <div class="btns">
+                <button type="submit" class="form-btn">Submit</button>
+                <button type="reset" class="form-btn">Reset</button>
+            </div>
+
+        </form>
+
+        
+        <span class="bg-1"></span>
+        <span class="bg-2"></span>
+    </div>
+	
+	
+	<script>
+    // Function to show the popup message
+    function showPopup() {
+        // Create a div element for the popup
+        var popup = document.createElement("div");
+        popup.innerHTML = `
+            <div class="popup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); z-index: 9999;">
+               <img src="sales.jpg" alt="Your Business Logo" style="max-width: 50%; margin: 0 auto; display: block;">
+
+               
+				<h2>Rate Us</h2>
+                <p>Dear Valued Customer, your feedback is important to us. Please take a moment to share your experience with Jhuxtello iTech.</p>
+                <!-- Your rating form or any other content can be added here -->
+                <button id="close-popup" class="close-btn">Close</button>
+            </div>
+            <div class="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 9998;"></div>
+        `;
+        // Append the popup to the body
+        document.body.appendChild(popup);
+
+        // Get the close button
+        var closeButton = document.getElementById('close-popup');
+        
+        // Add event listener to the close button
+        closeButton.addEventListener('click', closePopup);
+    }
+
+    // Function to close the popup message
+    function closePopup() {
+        var popup = document.querySelector(".popup");
+        var overlay = document.querySelector(".overlay");
+        if (popup && overlay) {
+            popup.parentNode.removeChild(popup);
+            overlay.parentNode.removeChild(overlay);
+        }
+    }
+
+    // Call the showPopup function when the page loads
+    window.onload = function() {
+        showPopup();
+    };
+	
+	// JavaScript function to set the issue status
+function setIssueSolved(status) {
+    // Remove active class from all buttons
+    document.querySelectorAll('.yes-no .form-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Add active class to the clicked button
+    if (status === 'Yes') {
+        document.getElementById('yesBtn').classList.add('active');
+    } else if (status === 'No') {
+        document.getElementById('noBtn').classList.add('active');
+    }
+}
+</script>
+
+	
+	
+</body>
+</html>
